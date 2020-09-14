@@ -1,5 +1,5 @@
 [book]
-authors = ["{{GROUP_NAME}}] Members"]
+authors = ["{{GROUP_NAME}} Members"]
 language = "en"
 multilingual = false
 src = "."
