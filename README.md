@@ -1,7 +1,6 @@
 # Error Handling Project Group
 
-Welcome the repository for the Error Handling Project Group! We're focused on 
-defining and communicating Rust's error handling story.
+Welcome to the repository for the Error Handling Project Group! We're focused on  defining and communicating Rust's error handling story.
 
 This is the repository we use to organise our work. Please refer to our [charter] for more information on our goals and
 current scope.
