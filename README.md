@@ -1,6 +1,6 @@
 # Error Handling Project Group
 
-Welcome to the repository for the Error Handling Project Group! We're focused on  defining and communicating Rust's error handling story.
+Welcome to the repository for the Error Handling Project Group! We're focused on defining and communicating Rust's error handling story.
 
 This is the repository we use to organise our work. Please refer to our [charter] for more information on our goals and
 current scope.
@@ -22,4 +22,3 @@ We also participate on [Zulip][chat-link], feel free to introduce yourself over 
 [open issues]: /issues
 [chat-link]: https://rust-lang.zulipchat.com/#narrow/stream/257204-project-error-handling
 [team-toml]: https://github.com/rust-lang/team/blob/master/teams/{{GROUP_TYPE}}-{{GROUP_SLUG}}.toml
-
