@@ -15,10 +15,17 @@ current scope.
 
 ## How Can I Get Involved?
 
+Participation in this project group is open to all. You can see our work in
+progress via our [open issues] on this repository and you can participate in
+discussions via our [Zulip stream][chat-link]. We primarily coordinate via 
+our meetings, which are tracked [here][meeting-schedule]. If you're 
+interested in attending our meetings but can't due to a schedule conflist
+please let us know on the [scheduling issue] so we can best accommodate everyone.
+
 If you'd like to participate be sure to check out any of our [open issues] on this repository.
 
 We also participate on [Zulip][chat-link], feel free to introduce yourself over there and ask us any questions you have.
 
 [open issues]: /issues
+[scheduling issue]: /issues/2
 [chat-link]: https://rust-lang.zulipchat.com/#narrow/stream/257204-project-error-handling
-[team-toml]: https://github.com/rust-lang/team/blob/master/teams/{{GROUP_TYPE}}-{{GROUP_SLUG}}.toml
