@@ -5,7 +5,7 @@ Welcome to the repository for the Error Handling Project Group! We're focused on
 This is the repository we use to organise our work. Please refer to our [charter] for more information on our goals and
 current scope.
 
- - Shepherd:
+ - Shepherds:
     - [Jane Lusby (yaahc)](https://github.com/yaahc)
     - [Sean Chen (seanchen1991)](https://github.com/seanchen1991)
  - Rust library team contact:
