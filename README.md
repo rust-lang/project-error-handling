@@ -7,10 +7,10 @@ This is the repository we use to organise our work. Please refer to our [charter
 current scope.
 
  - Shepherd:
-    - [yaahc](https://github.com/yaahc)
-    - [seanchen1991](https://github.com/seanchen1991)
+    - [Jane Lusby (yaahc)](https://github.com/yaahc)
+    - [Sean Chen (seanchen1991)](https://github.com/seanchen1991)
  - Rust library team contact:
-    - [BurntSushi](https://github.com/burntsushi)
+    - [Andrew Gallant (BurntSushi)](https://github.com/burntsushi)
 
 [charter]: ./CHARTER.md
 
