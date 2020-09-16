@@ -103,7 +103,7 @@ The project group will create RFCs for various changes to the standard library a
 
 ### Who are the initial shepherds/leaders? (This is preferably 2–3 individuals, but not required.)
 
-Jane Lusby(@yaahc_), Andrew Gallant(@BurntSushi), and Sean Chen(@seanchen1991).
+Jane Lusby(@yaahc), Andrew Gallant(@BurntSushi), and Sean Chen(@seanchen1991).
 
 ### Is your group long-running or temporary?
 
