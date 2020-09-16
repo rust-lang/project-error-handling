@@ -165,88 +165,160 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#group_name-group_type-group" id="group_name-group_type-group">{{GROUP_NAME}} {{GROUP_TYPE}} Group</a></h1>
-<!--
- This is the template for creating project groups in rust-lang. Be sure to go
- through all sections marked with `**FIX ME**`, and make sure that the text is
- correct, and feel free to replace/remove any part that's not relevant to
- your group.
-
- All of the text across all of the initial files uses the same group of
- variables to allow for easy search and replace. They are listed below.
-
- Example sed command: `sed -i '' 's/{{GROUP_NAME}}/Inline ASM/g' ./**/*.md`
- *Note* the `-i ''` is important as it is required on some platforms e.g. macOS
-
- * {{GROUP_NAME}} -> The display name of your group e.g. "Inline ASM".
- * {{GROUP_SLUG}} -> The url slug name of your group used for
-   `rust-lang/team` and repo name. e.g. "pg-inline-asm".
- * {{CHAT_PLATFORM}} -> The name of your chat app e.g. "Zulip".
- * {{CHAT_LINK}} -> The hyperlink to your discussions on the chat app
-   e.g. "https://rust-lang.zulipchat.com/#narrow/stream/216763-project-inline-asm".
--->
-<!--
- Status badge advertising the project as being actively worked on. When the
- project has finished be sure to replace the active badge with a badge
- like: https://img.shields.io/badge/status-archived-grey.svg
--->
-<p><img src="https://img.shields.io/badge/status-active-brightgreen.svg" alt="project group status: active" />
-<a href="https://rust-lang.github.io/%7B%7BGROUP_SLUG%7D%7D"><img src="https://img.shields.io/badge/MDBook-View%20Documentation-blue" alt="project group documentation" /></a></p>
-<p><strong>FIX ME</strong></p>
-<!--
- Provide a short introduction about your project group. Make sure to include any
- relevant links to information about your group.
--->
-<p>Welcome the repository for the {{GROUP_NAME}} Project Group! This is the
-repository we use to organise our work. Please refer to our <a href="./CHARTER.html">charter</a> as well
-as our <a href="https://rust-lang.github.io/%7B%7BGROUP_SLUG%7D%7D">github pages website</a> for more information on our goals and
+                        <h1><a class="header" href="#error-handling-project-group" id="error-handling-project-group">Error Handling Project Group</a></h1>
+<p>Welcome to the repository for the Error Handling Project Group! We're focused on defining and communicating Rust's error handling story.</p>
+<p>This is the repository we use to organise our work. Please refer to our <a href="./CHARTER.html">charter</a> for more information on our goals and
 current scope.</p>
-<p><strong>/FIX ME</strong></p>
+<ul>
+<li>Shepherds:
+<ul>
+<li><a href="https://github.com/yaahc">Jane Lusby (yaahc)</a></li>
+<li><a href="https://github.com/seanchen1991">Sean Chen (seanchen1991)</a></li>
+</ul>
+</li>
+<li>Rust library team contact:
+<ul>
+<li><a href="https://github.com/KodrAus">Ashley Mannix (KodrAus)</a></li>
+</ul>
+</li>
+<li>Advisors:
+<ul>
+<li><a href="https://github.com/burntsushi">Andrew Gallant (BurntSushi)</a></li>
+</ul>
+</li>
+</ul>
 <h2><a class="header" href="#how-can-i-get-involved" id="how-can-i-get-involved">How Can I Get Involved?</a></h2>
-<p><strong>FIX ME</strong></p>
-<!--
- List ways that people from outside your group can get involved and potentially
- become members, include what meetings your team has, and how a person could
- start participating and contributing. Make sure to mention the main platform
- your group hosts its discussions. Be sure to also include links to any
- other projects that your group maintains.
--->
-<p><a href="https://github.com/rust-lang/team/blob/master/teams/%7B%7BGROUP_TYPE%7D%7D-%7B%7BGROUP_SLUG%7D%7D.toml">You can find a list of the current members available
-on <code>rust-lang/team</code>.</a></p>
-<p>If you'd like to participate be sure to check out any of our <a href="/issues">open issues</a> on this
-repository.</p>
-<p>We also participate on <a href="%7B%7BCHAT_LINK%7D%7D">{{CHAT_PLATFORM}}</a>, feel free to introduce
-yourself over there and ask us any questions you have.</p>
-<p><strong>/FIX ME</strong></p>
-<h2><a class="header" href="#building-documentation" id="building-documentation">Building Documentation</a></h2>
-<p>This repository is also an mdbook project. You can view and build it using the
-following command.</p>
-<pre><code>mdbook serve
-</code></pre>
-<h1><a class="header" href="#group_name-charter" id="group_name-charter">{{GROUP_NAME}} Charter</a></h1>
-<!--
- Provide an introduction summarising the goals and motivation behind your
- project group.
--->
+<p>Participation in this project group is open to all. You can see our work in
+progress via our <a href="/issues">open issues</a> on this repository and you can participate in
+discussions via our <a href="https://rust-lang.zulipchat.com/#narrow/stream/257204-project-error-handling">Zulip stream</a>. We primarily coordinate via 
+our meetings, which are tracked [here][meeting-schedule]. If you're 
+interested in attending our meetings but can't due to a schedule conflist
+please let us know on the <a href="/issues/2">scheduling issue</a> so we can best accommodate everyone.</p>
+<h1><a class="header" href="#charter" id="charter">Charter</a></h1>
 <h2><a class="header" href="#goals" id="goals">Goals</a></h2>
-<!--
- Explain what changes you'd like to see your group your group to focus on, and
- how you plan to approach these issues. Focus on explaining the highest possible
- level of your change.
--->
-<h2><a class="header" href="#constraints-and-considerations" id="constraints-and-considerations">Constraints And Considerations</a></h2>
-<!--
- Explain the scope of your group, what you have chosen not to include in
- your goals, and your motivations behind making them non-goals.
--->
-<h2><a class="header" href="#membership" id="membership">Membership</a></h2>
-<!--
- Mention your initial membership and who has decided take the roles of
- shepherd(s) and liason.
--->
-<p><strong>Shepherd:</strong>
-<strong>Team Liason:</strong>
-<strong>Members:</strong></p>
+<h3><a class="header" href="#agree-on-and-define-common-error-handling-terminology" id="agree-on-and-define-common-error-handling-terminology">Agree on and define common error handling terminology</a></h3>
+<ul>
+<li>Recoverable error: An error that can be reacted and recovered from when encountered e.g. a missing file.</li>
+<li>Unrecoverable error: An error that cannot reasonably be reacted to or recovered from and which indicates a bug e.g. indexing out of bounds.</li>
+<li>Error Type: A type that represents a recoverable error. Error types can optionally implement the <code>Error</code> trait so that it can be reported to the user or be converted into a trait object.</li>
+<li>Reporting Type: A type that can store all recoverable errors an application may need to propagate and print them as error reports.
+<ul>
+<li>Reporting types can represent the recoverable errors either via concrete types, likely parameterized, or trait objects.</li>
+<li>Reporting types often bundle context with errors when they are constructed, e.g. <code>Backtrace</code>.</li>
+<li>Reporting types often provide helper functions for creating ad hoc errors whose only purpose is to be reported e.g. <code>anyhow::format_err!</code> or <code>eyre::WrapErr</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#come-to-a-consensus-on-current-best-practices" id="come-to-a-consensus-on-current-best-practices">Come to a consensus on current best practices</a></h3>
+<p>Here is a tenative starting point, subject to change:</p>
+<ul>
+<li>Use <code>Result</code> and <code>Error</code> types for recoverable errors.</li>
+<li>Use <code>panic</code> for unrecoverable errors.</li>
+<li>Implement <code>Error</code> for error types that may need to be reported to a human or be composed with other errors.</li>
+<li>Use enums for types representing multiple failure cases that may need to be handled.
+<ul>
+<li>For libraries, oftentimes you want to support both reporting and handling so you implement <code>Error</code> on a possibly non-exhaustive enum.</li>
+</ul>
+</li>
+<li>Error kind pattern for associating context with every enum variant without including the member in every enum variant.</li>
+<li>Convert to a reporting type when the error is no longer expected to be handled beyond reporting e.g. <code>anyhow::Error</code> or <code>eyre::Report</code> or when trait object + downcast error handling is preferable.</li>
+<li>Recommend <code>Box</code>ing concrete error types when stack size is an issue rather than <code>Box</code>ing and converting to <code>dyn Error</code>s.</li>
+<li>What is the consensus on handling <code>dyn Error</code>s? Should it be encouraged or discouraged? Should we look into making <code>Box&lt;dyn Error...&gt;</code> implement <code>Error</code>?</li>
+</ul>
+<h3><a class="header" href="#identify-pain-points-in-error-handling-today" id="identify-pain-points-in-error-handling-today">Identify pain points in error handling today</a></h3>
+<ul>
+<li>Backtrace capture is expensive, but without it can be difficult to pinpoint the origin of errors</li>
+<li>unwrapping errors without first converting to a reporting type will often discard relevant information</li>
+<li>errors printed from <code>main</code> have to assume a prefixed <code>Error: </code>, sub-par control of output format when printing during termination.</li>
+<li>The <code>Error</code> trait only exposes three forms of context, can only represent singly-linked lists for chains of errors</li>
+</ul>
+<h3><a class="header" href="#communicate-current-best-practices" id="communicate-current-best-practices">Communicate current best practices</a></h3>
+<ul>
+<li>Document the consensus.</li>
+<li>Communicate plan for future changes to error handling, and the libraries that future changes are being based off of.</li>
+<li>Produce learning resources related to current best practices.
+<ul>
+<li>New chapters in the book?</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#evaluate-options-for-error-reporting-type-aka-better-boxdyn-error" id="evaluate-options-for-error-reporting-type-aka-better-boxdyn-error">Evaluate options for error reporting type a.k.a. better <code>Box&lt;dyn Error&gt;</code></a></h3>
+<ul>
+<li>Survey the current libraries in the ecosystem:
+<ul>
+<li><code>anyhow</code></li>
+<li><code>eyre</code></li>
+</ul>
+</li>
+<li>Evaluate value of features including:
+<ul>
+<li>Single word width on stack</li>
+<li>Error wrapping with display types and with special downcast support.</li>
+<li>Report hook and configurable <code>dyn ReportHandler</code> type for custom report formats and content, similar to panic handler but for errors.</li>
+<li><code>#[no_std]</code> support</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#consolidate-ecosystem-by-merging-best-practice-crates-into-std" id="consolidate-ecosystem-by-merging-best-practice-crates-into-std">Consolidate ecosystem by merging best practice crates into std</a></h3>
+<ul>
+<li>Provide a derive macro for <code>Error</code> in std.</li>
+<li>Stabilize the <code>Backtrace</code> type but possibly not <code>fn backtrace</code> on the <code>Error</code> trait.
+<ul>
+<li>Provide necessary API on <code>Backtrace</code> to support crates like <code>color-backtrace</code>.</li>
+</ul>
+</li>
+<li>Move <code>Error</code> to core.
+<ul>
+<li>Depends on generic member access.</li>
+<li>Requires resolving downcast dependency on <code>Box</code> and blocking the stabilization of <code>fn backtrace</code>.</li>
+</ul>
+</li>
+<li>Potentially stabilize an error reporting type based on <code>anyhow</code> and <code>eyre</code> now that they're close to having identical feature sets.</li>
+</ul>
+<h3><a class="header" href="#add-missing-features" id="add-missing-features">Add missing features</a></h3>
+<ul>
+<li>Generic member access on the <code>Error</code> trait.</li>
+<li><code>Error</code> return traces:
+<ul>
+<li>Depends on specialization and generic member access.</li>
+</ul>
+</li>
+<li>Fix rough corners around reporting errors and <code>Termination</code>.</li>
+</ul>
+<h2><a class="header" href="#non-goals" id="non-goals">Non Goals</a></h2>
+<ul>
+<li>This group should not be involved in managing design discussions for the <code>Try</code> trait, <code>try</code> blocks, or <code>try</code> fns.</li>
+</ul>
+<h2><a class="header" href="#membership-requirements" id="membership-requirements">Membership Requirements</a></h2>
+<ul>
+<li>Group membership is open, any interested party can participate in discussions, repeat contributors will be added to appropriate teams.</li>
+</ul>
+<h2><a class="header" href="#additional-questions" id="additional-questions">Additional Questions</a></h2>
+<h3><a class="header" href="#what-support-do-you-need-and-separately-want-from-the-rust-organization" id="what-support-do-you-need-and-separately-want-from-the-rust-organization">What support do you need, and separately want, from the Rust organization?</a></h3>
+<p>I'm not sure, my main concern is getting prompt feedback on RFCs.</p>
+<h3><a class="header" href="#why-should-this-be-a-project-group-over-a-community-effort" id="why-should-this-be-a-project-group-over-a-community-effort">Why should this be a project group over a community effort?</a></h3>
+<p>There isn't anything in this project group that can't be handled as a
+community effort, but centralizing work into a project group should help
+speed things. Error handling is a core aspect of the language and changes in
+error handling have large impacts on the ecosystem. Ensuring that efforts to
+refine error handling within Rust have sufficient resources and don't stall
+out is in the best interests of the community. By organizing efforts as a
+project group we will hopefully have an easier time recruiting new members,
+getting attention on RFCs from members of the libs team, and using the
+established resources and expertise of the rust organization for coordinating
+our efforts.</p>
+<h3><a class="header" href="#what-do-you-expect-the-relationship-to-the-team-be" id="what-do-you-expect-the-relationship-to-the-team-be">What do you expect the relationship to the team be?</a></h3>
+<p>The project group will create RFCs for various changes to the standard library and the team will review them via the standard RFC process.</p>
+<h3><a class="header" href="#who-are-the-initial-shepherdsleaders-this-is-preferably-23-individuals-but-not-required" id="who-are-the-initial-shepherdsleaders-this-is-preferably-23-individuals-but-not-required">Who are the initial shepherds/leaders? (This is preferably 2–3 individuals, but not required.)</a></h3>
+<p>Jane Lusby(@yaahc), Andrew Gallant(@BurntSushi), and Sean Chen(@seanchen1991).</p>
+<h3><a class="header" href="#is-your-group-long-running-or-temporary" id="is-your-group-long-running-or-temporary">Is your group long-running or temporary?</a></h3>
+<p>Temporary.</p>
+<h3><a class="header" href="#if-it-is-temporary-how-long-do-you-see-it-running-for" id="if-it-is-temporary-how-long-do-you-see-it-running-for">If it is temporary, how long do you see it running for?</a></h3>
+<p>This depends pretty heavily on how quickly the RFCs move, anywhere between 6 months and 2 years I'd guess but don't quote me on this.</p>
+<h3><a class="header" href="#if-applicable-which-other-groups-or-teams-do-you-expect-to-have-close-contact-with" id="if-applicable-which-other-groups-or-teams-do-you-expect-to-have-close-contact-with">If applicable, which other groups or teams do you expect to have close contact with?</a></h3>
+<p>Primarily the libs team, but there may be some small interactions with the lang team, compiler team, and traits working group.</p>
+<h3><a class="header" href="#where-do-you-see-your-group-needing-help" id="where-do-you-see-your-group-needing-help">Where do you see your group needing help?</a></h3>
+<p>Primarily in drafting RFCs, writing is not this author's strong suit.</p>
 <h1><a class="header" href="#meetings" id="meetings">Meetings</a></h1>
 <p>This folder contains the minutes of all the recorded meetings that have happened
 so far.</p>

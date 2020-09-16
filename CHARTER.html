@@ -163,30 +163,131 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#group_name-charter" id="group_name-charter">{{GROUP_NAME}} Charter</a></h1>
-<!--
- Provide an introduction summarising the goals and motivation behind your
- project group.
--->
+                        <h1><a class="header" href="#charter" id="charter">Charter</a></h1>
 <h2><a class="header" href="#goals" id="goals">Goals</a></h2>
-<!--
- Explain what changes you'd like to see your group your group to focus on, and
- how you plan to approach these issues. Focus on explaining the highest possible
- level of your change.
--->
-<h2><a class="header" href="#constraints-and-considerations" id="constraints-and-considerations">Constraints And Considerations</a></h2>
-<!--
- Explain the scope of your group, what you have chosen not to include in
- your goals, and your motivations behind making them non-goals.
--->
-<h2><a class="header" href="#membership" id="membership">Membership</a></h2>
-<!--
- Mention your initial membership and who has decided take the roles of
- shepherd(s) and liason.
--->
-<p><strong>Shepherd:</strong>
-<strong>Team Liason:</strong>
-<strong>Members:</strong></p>
+<h3><a class="header" href="#agree-on-and-define-common-error-handling-terminology" id="agree-on-and-define-common-error-handling-terminology">Agree on and define common error handling terminology</a></h3>
+<ul>
+<li>Recoverable error: An error that can be reacted and recovered from when encountered e.g. a missing file.</li>
+<li>Unrecoverable error: An error that cannot reasonably be reacted to or recovered from and which indicates a bug e.g. indexing out of bounds.</li>
+<li>Error Type: A type that represents a recoverable error. Error types can optionally implement the <code>Error</code> trait so that it can be reported to the user or be converted into a trait object.</li>
+<li>Reporting Type: A type that can store all recoverable errors an application may need to propagate and print them as error reports.
+<ul>
+<li>Reporting types can represent the recoverable errors either via concrete types, likely parameterized, or trait objects.</li>
+<li>Reporting types often bundle context with errors when they are constructed, e.g. <code>Backtrace</code>.</li>
+<li>Reporting types often provide helper functions for creating ad hoc errors whose only purpose is to be reported e.g. <code>anyhow::format_err!</code> or <code>eyre::WrapErr</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#come-to-a-consensus-on-current-best-practices" id="come-to-a-consensus-on-current-best-practices">Come to a consensus on current best practices</a></h3>
+<p>Here is a tenative starting point, subject to change:</p>
+<ul>
+<li>Use <code>Result</code> and <code>Error</code> types for recoverable errors.</li>
+<li>Use <code>panic</code> for unrecoverable errors.</li>
+<li>Implement <code>Error</code> for error types that may need to be reported to a human or be composed with other errors.</li>
+<li>Use enums for types representing multiple failure cases that may need to be handled.
+<ul>
+<li>For libraries, oftentimes you want to support both reporting and handling so you implement <code>Error</code> on a possibly non-exhaustive enum.</li>
+</ul>
+</li>
+<li>Error kind pattern for associating context with every enum variant without including the member in every enum variant.</li>
+<li>Convert to a reporting type when the error is no longer expected to be handled beyond reporting e.g. <code>anyhow::Error</code> or <code>eyre::Report</code> or when trait object + downcast error handling is preferable.</li>
+<li>Recommend <code>Box</code>ing concrete error types when stack size is an issue rather than <code>Box</code>ing and converting to <code>dyn Error</code>s.</li>
+<li>What is the consensus on handling <code>dyn Error</code>s? Should it be encouraged or discouraged? Should we look into making <code>Box&lt;dyn Error...&gt;</code> implement <code>Error</code>?</li>
+</ul>
+<h3><a class="header" href="#identify-pain-points-in-error-handling-today" id="identify-pain-points-in-error-handling-today">Identify pain points in error handling today</a></h3>
+<ul>
+<li>Backtrace capture is expensive, but without it can be difficult to pinpoint the origin of errors</li>
+<li>unwrapping errors without first converting to a reporting type will often discard relevant information</li>
+<li>errors printed from <code>main</code> have to assume a prefixed <code>Error: </code>, sub-par control of output format when printing during termination.</li>
+<li>The <code>Error</code> trait only exposes three forms of context, can only represent singly-linked lists for chains of errors</li>
+</ul>
+<h3><a class="header" href="#communicate-current-best-practices" id="communicate-current-best-practices">Communicate current best practices</a></h3>
+<ul>
+<li>Document the consensus.</li>
+<li>Communicate plan for future changes to error handling, and the libraries that future changes are being based off of.</li>
+<li>Produce learning resources related to current best practices.
+<ul>
+<li>New chapters in the book?</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#evaluate-options-for-error-reporting-type-aka-better-boxdyn-error" id="evaluate-options-for-error-reporting-type-aka-better-boxdyn-error">Evaluate options for error reporting type a.k.a. better <code>Box&lt;dyn Error&gt;</code></a></h3>
+<ul>
+<li>Survey the current libraries in the ecosystem:
+<ul>
+<li><code>anyhow</code></li>
+<li><code>eyre</code></li>
+</ul>
+</li>
+<li>Evaluate value of features including:
+<ul>
+<li>Single word width on stack</li>
+<li>Error wrapping with display types and with special downcast support.</li>
+<li>Report hook and configurable <code>dyn ReportHandler</code> type for custom report formats and content, similar to panic handler but for errors.</li>
+<li><code>#[no_std]</code> support</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#consolidate-ecosystem-by-merging-best-practice-crates-into-std" id="consolidate-ecosystem-by-merging-best-practice-crates-into-std">Consolidate ecosystem by merging best practice crates into std</a></h3>
+<ul>
+<li>Provide a derive macro for <code>Error</code> in std.</li>
+<li>Stabilize the <code>Backtrace</code> type but possibly not <code>fn backtrace</code> on the <code>Error</code> trait.
+<ul>
+<li>Provide necessary API on <code>Backtrace</code> to support crates like <code>color-backtrace</code>.</li>
+</ul>
+</li>
+<li>Move <code>Error</code> to core.
+<ul>
+<li>Depends on generic member access.</li>
+<li>Requires resolving downcast dependency on <code>Box</code> and blocking the stabilization of <code>fn backtrace</code>.</li>
+</ul>
+</li>
+<li>Potentially stabilize an error reporting type based on <code>anyhow</code> and <code>eyre</code> now that they're close to having identical feature sets.</li>
+</ul>
+<h3><a class="header" href="#add-missing-features" id="add-missing-features">Add missing features</a></h3>
+<ul>
+<li>Generic member access on the <code>Error</code> trait.</li>
+<li><code>Error</code> return traces:
+<ul>
+<li>Depends on specialization and generic member access.</li>
+</ul>
+</li>
+<li>Fix rough corners around reporting errors and <code>Termination</code>.</li>
+</ul>
+<h2><a class="header" href="#non-goals" id="non-goals">Non Goals</a></h2>
+<ul>
+<li>This group should not be involved in managing design discussions for the <code>Try</code> trait, <code>try</code> blocks, or <code>try</code> fns.</li>
+</ul>
+<h2><a class="header" href="#membership-requirements" id="membership-requirements">Membership Requirements</a></h2>
+<ul>
+<li>Group membership is open, any interested party can participate in discussions, repeat contributors will be added to appropriate teams.</li>
+</ul>
+<h2><a class="header" href="#additional-questions" id="additional-questions">Additional Questions</a></h2>
+<h3><a class="header" href="#what-support-do-you-need-and-separately-want-from-the-rust-organization" id="what-support-do-you-need-and-separately-want-from-the-rust-organization">What support do you need, and separately want, from the Rust organization?</a></h3>
+<p>I'm not sure, my main concern is getting prompt feedback on RFCs.</p>
+<h3><a class="header" href="#why-should-this-be-a-project-group-over-a-community-effort" id="why-should-this-be-a-project-group-over-a-community-effort">Why should this be a project group over a community effort?</a></h3>
+<p>There isn't anything in this project group that can't be handled as a
+community effort, but centralizing work into a project group should help
+speed things. Error handling is a core aspect of the language and changes in
+error handling have large impacts on the ecosystem. Ensuring that efforts to
+refine error handling within Rust have sufficient resources and don't stall
+out is in the best interests of the community. By organizing efforts as a
+project group we will hopefully have an easier time recruiting new members,
+getting attention on RFCs from members of the libs team, and using the
+established resources and expertise of the rust organization for coordinating
+our efforts.</p>
+<h3><a class="header" href="#what-do-you-expect-the-relationship-to-the-team-be" id="what-do-you-expect-the-relationship-to-the-team-be">What do you expect the relationship to the team be?</a></h3>
+<p>The project group will create RFCs for various changes to the standard library and the team will review them via the standard RFC process.</p>
+<h3><a class="header" href="#who-are-the-initial-shepherdsleaders-this-is-preferably-23-individuals-but-not-required" id="who-are-the-initial-shepherdsleaders-this-is-preferably-23-individuals-but-not-required">Who are the initial shepherds/leaders? (This is preferably 2–3 individuals, but not required.)</a></h3>
+<p>Jane Lusby(@yaahc), Andrew Gallant(@BurntSushi), and Sean Chen(@seanchen1991).</p>
+<h3><a class="header" href="#is-your-group-long-running-or-temporary" id="is-your-group-long-running-or-temporary">Is your group long-running or temporary?</a></h3>
+<p>Temporary.</p>
+<h3><a class="header" href="#if-it-is-temporary-how-long-do-you-see-it-running-for" id="if-it-is-temporary-how-long-do-you-see-it-running-for">If it is temporary, how long do you see it running for?</a></h3>
+<p>This depends pretty heavily on how quickly the RFCs move, anywhere between 6 months and 2 years I'd guess but don't quote me on this.</p>
+<h3><a class="header" href="#if-applicable-which-other-groups-or-teams-do-you-expect-to-have-close-contact-with" id="if-applicable-which-other-groups-or-teams-do-you-expect-to-have-close-contact-with">If applicable, which other groups or teams do you expect to have close contact with?</a></h3>
+<p>Primarily the libs team, but there may be some small interactions with the lang team, compiler team, and traits working group.</p>
+<h3><a class="header" href="#where-do-you-see-your-group-needing-help" id="where-do-you-see-your-group-needing-help">Where do you see your group needing help?</a></h3>
+<p>Primarily in drafting RFCs, writing is not this author's strong suit.</p>
 
                     </main>
 
