@@ -9,6 +9,8 @@ current scope.
     - [Jane Lusby (yaahc)](https://github.com/yaahc)
     - [Sean Chen (seanchen1991)](https://github.com/seanchen1991)
  - Rust library team contact:
+    - [Ashley Mannix (KodrAus)](https://github.com/KodrAus)
+ - Advisors:
     - [Andrew Gallant (BurntSushi)](https://github.com/burntsushi)
 
 [charter]: ./CHARTER.md
