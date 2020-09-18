@@ -28,3 +28,4 @@ please let us know on the [scheduling issue] so we can best accommodate everyone
 [open issues]: ../../issues
 [scheduling issue]: ../../issues/2
 [chat-link]: https://rust-lang.zulipchat.com/#narrow/stream/257204-project-error-handling
+[meeting-schedule]: https://doodle.com/poll/fkmvqvpq6eu68igi
