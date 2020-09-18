@@ -25,6 +25,6 @@ interested in attending our meetings but can't due to a schedule conflist
 please let us know on the [scheduling issue] so we can best accommodate everyone.
 
 
-[open issues]: /issues
-[scheduling issue]: /issues/2
+[open issues]: ../../issues
+[scheduling issue]: ../../issues/2
 [chat-link]: https://rust-lang.zulipchat.com/#narrow/stream/257204-project-error-handling
