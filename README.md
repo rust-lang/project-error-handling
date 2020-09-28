@@ -21,7 +21,7 @@ The best place to start is probably the agenda of the next meeting. This is
 where we track action items from the previous meeting, the previous
 meetings's agenda and minutes, and upcoming topics for the next meeting. You
 can also check out our issue tracker, project boards, and zulip chat to see
-the various pieces of what we're working on.
+all of the pieces of work that we're doing.
 
 - [Upcoming Meeting Agenda][active-agenda]
 - [Libs Team Tracked Issues][libs-error-project-tab]
