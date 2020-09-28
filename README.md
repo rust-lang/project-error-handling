@@ -45,4 +45,4 @@ please let us know on the [scheduling issue] so we can best accommodate everyone
 [meeting-schedule]: https://calendar.google.com/calendar/u/0/embed?src=9kuu8evq4eh6uacm262k0phri8@group.calendar.google.com
 [active-agenda]: https://hackmd.io/@rust-libs/SkPmShkLD
 [libs-error-project-tab]: https://github.com/rust-lang/libs-team/projects/2#column-10224181
-[upstream-work-project-board]: https://github.com/rust-lang/project-error-handling/projects
+[upstream-work-project-board]: https://github.com/rust-lang/project-error-handling/projects/1
