@@ -15,7 +15,7 @@
 
 ### Come to a consensus on current best practices
 
-Here is a tenative starting point, subject to change:
+Here is a tentative starting point, subject to change:
 
 - Use `Result` and `Error` types for recoverable errors.
 - Use `panic` for unrecoverable errors.
