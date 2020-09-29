@@ -1,0 +1,10 @@
+[book]
+authors = ["Rust Error Handling Project Members"]
+language = "en"
+multilingual = false
+src = "./src"
+title = "The Rust Error Book (Title Pending)"
+
+[output.html]
+no-section-label=true
+git-repository-url="https://github.com/rust-lang/project-error-handling"
