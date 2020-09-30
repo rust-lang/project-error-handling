@@ -33,10 +33,11 @@ all of the pieces of work that we're doing.
 
 Participation in this project group is open to all. You can see our work in
 progress via our [open issues] on this repository and you can participate in
-discussions via our [Zulip stream][chat-link]. We primarily coordinate via
-our meetings, which are tracked [here][meeting-schedule]. If you're
-interested in attending our meetings but can't due to a schedule conflist
-please let us know on the [scheduling issue] so we can best accommodate everyone.
+discussions via our [Zulip stream][chat-link] and or introduce yourself in the
+[new members thread][members-thread]. We primarily coordinate via our meetings,
+which are tracked [here][meeting-schedule]. If you're interested in attending
+our meetings but can't due to a schedule conflist please let us know on the
+[scheduling issue] so we can best accommodate everyone.
 
 
 [open issues]: ../../issues
@@ -46,3 +47,4 @@ please let us know on the [scheduling issue] so we can best accommodate everyone
 [active-agenda]: https://hackmd.io/@rust-libs/SkPmShkLD
 [libs-error-project-tab]: https://github.com/rust-lang/libs-team/projects/2#column-10224181
 [upstream-work-project-board]: https://github.com/rust-lang/project-error-handling/projects/1
+[members-thread]: https://rust-lang.zulipchat.com/#narrow/stream/257204-project-error-handling/topic/New.20Members
