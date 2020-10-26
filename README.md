@@ -1,9 +1,10 @@
 # Error Handling Project Group
 
-Welcome to the repository for the Error Handling Project Group! We're focused on defining and communicating Rust's error handling story.
+Welcome to the repository for the Error Handling Project Group! We're focused on
+defining and communicating Rust's error handling story.
 
-This is the repository we use to organise our work. Please refer to our [charter] for more information on our goals and
-current scope.
+This is the repository we use to organise our work. Please refer to our
+[charter] for more information on our goals and current scope.
 
  - Shepherds:
     - [Jane Lusby (yaahc)](https://github.com/yaahc)
@@ -18,10 +19,10 @@ current scope.
 ## How do I follow the project group's work?
 
 The best place to start is probably the agenda of the next meeting. This is
-where we track action items from the previous meeting, the previous
-meetings's agenda and minutes, and upcoming topics for the next meeting. You
-can also check out our issue tracker, project boards, and zulip chat to see
-all of the pieces of work that we're doing.
+where we track action items from the previous meeting, the previous meetings
+agenda and minutes, and upcoming topics for the next meeting. You can also check
+out our issue tracker, project boards, and zulip chat to see all of the pieces
+of work that we're doing.
 
 - [Upcoming Meeting Agenda][active-agenda]
 - [Libs Team Tracked Issues][libs-error-project-tab]
