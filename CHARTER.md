@@ -14,8 +14,8 @@
   or be converted into a trait object.
 - Reporting Type: A type that can store all recoverable errors an application
   may need to propagate and print them as error reports.
-- Reporting types can represent the recoverable errors either via concrete
-  types, likely parameterized, or trait objects.
+    - Reporting types can represent the recoverable errors either via concrete
+      types, likely parameterized, or trait objects.
     - Reporting types often bundle context with errors when they are
       constructed, e.g. `Backtrace`.
     - Reporting types often provide helper functions for creating ad hoc errors
