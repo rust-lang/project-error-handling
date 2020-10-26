@@ -5,6 +5,16 @@ multilingual = false
 src = "./src"
 title = "The Rust Error Book (Title Pending)"
 
+[rust]
+edition = "2018"
+
+[build]
+create-missing = true
+
+[preprocessor.links]
+
+[preprocessor.index]
+
 [output.html]
-no-section-label=true
-git-repository-url="https://github.com/rust-lang/project-error-handling"
+no-section-label = true
+git-repository-url = "https://github.com/rust-lang/project-error-handling"
