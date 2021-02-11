@@ -1,0 +1,13 @@
+### References Are Collected Here
+
+#### Intro Summary
+#### Generalities of Error Handling
+#### Rust's Idioms for Handling Errors 
+
+#### Advanced Error Design Patterns
+https://rust-lang-nursery.github.io/failure/guidance.html
+
+#### Error Anti-Patterns
+#### FFI
+#### Glossary
+#### Appendices/Additional Resources
