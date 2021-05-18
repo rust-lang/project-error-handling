@@ -55,7 +55,7 @@ digraph g {
     {T:f0 -> Option:f0 [
         dir=back
         label="Some(T)\nunwrap()"
-        fontsize=8
+        fontsize=8 
     ];
     } 
 
