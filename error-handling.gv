@@ -38,7 +38,7 @@ digraph g {
                  <f3> + Function: catch_unwind \l |
                  <f4> + Function: resume_unwind \l |
                  <f5> + Function: panic_any \l"
-        id = 3
+        id = 3 
     ];
 
     PanicInfo [
