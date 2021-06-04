@@ -10,7 +10,7 @@ This is the repository we use to organise our work. Please refer to our
     - [Jane Lusby (yaahc)](https://github.com/yaahc)
     - [Sean Chen (seanchen1991)](https://github.com/seanchen1991)
  - Rust library team contact:
-    - [Ashley Mannix (KodrAus)](https://github.com/KodrAus)
+    - [Mara Bos (m-ou-se)](https://github.com/m-ou-se)
  - Advisors:
     - [Andrew Gallant (BurntSushi)](https://github.com/burntsushi)
 
