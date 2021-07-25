@@ -1,6 +1,8 @@
 digraph g {
     graph [
         rankdir = "LR";
+        // title
+        labelloc= "t";
         label= <<u>Error Handling</u>>;
     ];
 
@@ -13,7 +15,6 @@ digraph g {
         label = "&lt; T &gt;"
         shape = plain
         fontsize=9
-        PORT = "f0"
         id = 0
     ];
 
@@ -52,14 +53,14 @@ digraph g {
     // Layout
     
     // T to Option {reverse direction i.e. <-}
-    {T:f0 -> Option:f0 [
+    {T -> Option:f0 [
         dir=back
         label="Some(T)\nunwrap()"
         fontsize=8
     ];
     } 
 
-    Result:f0 -> T:f0 [
+    Result:f0 -> T [
         label="Ok(T)\nunwrap()" 
         fontsize=8
     ];
