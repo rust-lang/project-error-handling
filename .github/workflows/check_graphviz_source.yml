@@ -1,0 +1,16 @@
+# name: check-graphviz-actions
+# Trigger the workflow on pull request,
+# but only for the main branch 
+on:
+  push: 
+    branches:
+      - master
+jobs:
+  check-graphviz-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Graphviz 
+        uses: ts-graphviz/setup-graphviz@v1
+        run:  dot -Tsvg error-handling.gv > error-handling.svg
