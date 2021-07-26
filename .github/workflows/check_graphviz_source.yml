@@ -15,3 +15,4 @@ jobs:
         uses: ts-graphviz/setup-graphviz@v1
       - name: Create Svg
         run:  dot -Tsvg error-handling.gv > error-handling.svg
+        
