@@ -1,5 +1,5 @@
 # name: check-graphviz-actions
-# Trigger the workflow on pull request,
+# Trigger the workflow on [pull_request, push]
 # but only for the main branch 
 on:
   pull_request: 
@@ -17,4 +17,4 @@ jobs:
       - name: Create Svg
         run:  |
             dot -Tsvg error-handling.gv > new-error-handling.svg
-            cmp error-handling.svg new-error-handling.svg
+            cmp -i 194 error-handling.svg new-error-handling.svg
