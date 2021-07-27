@@ -2,6 +2,7 @@
 # Trigger the workflow on pull request,
 # but only for the main branch 
 on:
+  pull_request:
   push: 
     branches:
       - master
@@ -14,4 +15,6 @@ jobs:
       - name: Setup Graphviz 
         uses: ts-graphviz/setup-graphviz@v1
       - name: Create Svg
-        run:  dot -Tsvg error-handling.gv > error-handling.svg
+        run:  |
+            dot -Tsvg error-handling.gv > new-error-handling.svg
+            cmp error-handling.svg new-error-handling.svg
