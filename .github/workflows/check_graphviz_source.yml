@@ -2,7 +2,7 @@
 # Trigger the workflow on pull request,
 # but only for the main branch 
 on:
-  pull_request:
+  pull_request: 
   push: 
     branches:
       - master
