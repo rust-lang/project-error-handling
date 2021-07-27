@@ -20,6 +20,6 @@ jobs:
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
-          path: project-error-handling/new-error-handling.svg
+          name: new-error-handling
+          path: src/new-error-handling.svg
           retention-days: 5
