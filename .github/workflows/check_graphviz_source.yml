@@ -17,9 +17,9 @@ jobs:
       - name: Create Svg
         run:  dot -Tsvg error-handling.gv > new-error-handling.svg
             # cmp -l error-handling.svg new-error-handling.svg
-      - name: 'Upload Artifact'
+      - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: new-error-handling
-          path: project-error-handling/src
-          retention-days: 5
+          name: Src Dir
+          path: src
+      #    retention-days: 5
