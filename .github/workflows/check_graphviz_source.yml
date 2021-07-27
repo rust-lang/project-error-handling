@@ -15,6 +15,11 @@ jobs:
       - name: Setup Graphviz 
         uses: ts-graphviz/setup-graphviz@v1
       - name: Create Svg
-        run:  |
-            dot -Tsvg error-handling.gv > new-error-handling.svg
-            cmp -l error-handling.svg new-error-handling.svg
+        run:  dot -Tsvg error-handling.gv > new-error-handling.svg
+            # cmp -l error-handling.svg new-error-handling.svg
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: project-error-handling/new-error-handling.svg
+          retention-days: 5
