@@ -50,8 +50,7 @@ digraph g {
         id = 4
     ];
 
-    // Layout
-        
+    // Layout        
     // T to Option {reverse direction i.e. <-}
     {T -> Option:f0 [
         dir=back
