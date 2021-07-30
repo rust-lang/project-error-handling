@@ -31,7 +31,7 @@ jobs:
         if: steps.changed-files-specific.outputs.only_changed == 'true'
         run: |
           dot -Tsvg error-handling.gv > error-handling-artifact.svg      
-          
+
       - name: 'Upload Artifact if the listed file changed'
         if: steps.changed-files-specific.outputs.only_changed == 'true'
         uses: actions/upload-artifact@v2
