@@ -15,6 +15,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
       - uses: ts-graphviz/setup-graphviz@v1
 
       - name: Get specific changed file(s)
