@@ -1,4 +1,6 @@
 # name: check-graphviz-actions
+# ts-graphviz/setup-graphviz@v1 : https://github.com/ts-graphviz/setup-graphviz
+# tj-actions/changed-files@v9 : https://github.com/tj-actions/changed-files
 # Trigger the workflow on [pull_request, push]
 # but only for the main branch 
 on: 
@@ -12,18 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Graphviz 
-        uses: ts-graphviz/setup-graphviz@v1
-        with:
-            graphviz-version: 2.47.3 (20210619.1520)
-      - name: Create Svg
-        run:  dot -Tsvg error-handling.gv > new-error-handling.svg
-            # cmp -l error-handling.svg new-error-handling.svg
+      - uses: actions/checkout@v2
+      - uses: ts-graphviz/setup-graphviz@v1
+
+      - name: Get specific changed file(s)
+        id: changed-files-specific 
+        uses: tj-actions/changed-files@v9
+        with :
+          files: |
+            error-handling.gv
+
+      - name: Run step if the listed file above changes
+        if: steps.changed-files-specific.outputs.only_changed == 'true'
+        run: |
+          dot -Tsvg error-handling.gv > error-handling-artifact.svg
+        
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
-          path: new-error-handling.svg
-          retention-days: 5
+          name: error-handling-artifact
+          path: error-handling-artifact.svg
+          retention-days: 30
