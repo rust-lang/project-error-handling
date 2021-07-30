@@ -3,7 +3,7 @@ digraph g {
         rankdir = "LR";
         // title
         labelloc= "t";
-        label= <<u>Error Handling</u>>;
+        label= <<b><u>Error Handling</u></b>>;
     ];
 
     node [
