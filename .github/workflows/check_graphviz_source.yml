@@ -1,8 +1,8 @@
-# name: check-graphviz-actions
+# name: check-graphviz-file
 # ts-graphviz/setup-graphviz@v1 : https://github.com/ts-graphviz/setup-graphviz
 # tj-actions/changed-files@v9 : https://github.com/tj-actions/changed-files
 # Trigger the workflow on [pull_request, push]
-# but only for the main branch 
+# but only for the main/master branch 
 on: 
   pull_request: 
     branches: [ master ]
@@ -10,7 +10,7 @@ on:
     branches: [ master]
 
 jobs:
-  check-graphviz-actions:
+  check-graphviz-file:
     runs-on: ubuntu-latest
 
     steps:
