@@ -1,0 +1,41 @@
+# name: check-graphviz-file
+# ts-graphviz/setup-graphviz@v1 : https://github.com/ts-graphviz/setup-graphviz
+# tj-actions/changed-files@v9 : https://github.com/tj-actions/changed-files
+# Trigger the workflow on [pull_request, push]
+# but only for the main/master branch 
+on: 
+  pull_request: 
+    branches: [ master ]
+  push: 
+    branches: [ master]
+
+jobs:
+  check-graphviz-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: ts-graphviz/setup-graphviz@v1
+
+      - name: Get specific changed file(s)
+        id: changed-files-specific 
+        uses: tj-actions/changed-files@v9
+        with :
+          files: |
+            error-handling.gv
+
+      - name: Create svg if the listed file changed
+        if: steps.changed-files-specific.outputs.only_changed == 'true'
+        run: |
+          dot -Tsvg error-handling.gv > error-handling.svg      
+
+      - name: 'Upload Artifact if the listed file changed'
+        if: steps.changed-files-specific.outputs.only_changed == 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: error-handling
+          path: error-handling.svg
+          retention-days: 30
