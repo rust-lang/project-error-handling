@@ -71,6 +71,7 @@ https://paper.dropbox.com/doc/Collaborative-Summary-3-Fact-Finding-Pre-RFCs-arou
 https://pingcap.com/blog/rust-huge-compilation-units
 https://rpeszek.github.io/posts/2021-01-17-maybe-overuse.html
 https://rustc-dev-guide.rust-lang.org/panic-implementation.html?highlight=panic_handler#panicking-in-rust
+https://saidvandeklundert.net/learn/2021-09-01-rust-option-and-result/
 https://sled.rs/errors
 https://smallcultfollowing.com/babysteps/blog/2015/01/14/little-orphan-impls/
 https://smallcultfollowing.com/babysteps/blog/2018/04/24/rust-pattern-precise-closure-capture-clauses/
