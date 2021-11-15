@@ -33,6 +33,7 @@ https://crates.io/crates/thiserror
 https://deterministic.space/hook-into-rustc-errors.html
 https://dev.to/cad97/try-fn-without-special-casing-result-4m5b
 https://dev.to/e_net4/migrating-from-quick-error-to-snafu-a-story-on-revamped-error-handling-in-rust-58h9
+https://diziet.dreamwidth.org/9894.html
 https://doc.rust-lang.org/error-index.html
 https://docs.rs/adhocerr/0.1.2/adhocerr/
 https://docs.rs/color-eyre/0.5.4/color_eyre/section/trait.Section.html
